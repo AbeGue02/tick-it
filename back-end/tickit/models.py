@@ -11,10 +11,8 @@ class Location(models.Model):
     return self.state
   
 class Venue(models.Model):
-  state = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='venue')
+  location = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='venue')
   name = models.CharField(max_length=100, default='no venue name')
-  state = models.CharField(max_length=100, default='no state name')
-  city = models.CharField(max_length=100, default='no city name')
   venue_img = models.TextField(max_length=300, default='')
 
   def __str__(self):
