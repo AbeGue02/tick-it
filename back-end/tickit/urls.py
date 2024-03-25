@@ -2,12 +2,11 @@ from django.urls import path
 from . import views
 from rest_framework.routers import DefaultRouter
 
-from django.conf.urls import include
-from django.urls import path
-from django.contrib import admin
-
 urlpatterns = [
-    path('admin', admin.site.urls),
-    path('', include('tickit.urls')),
-    path('api-auth', include('rest_framework.urls', namespace='rest_framework'))
-    ]
+    path('locations/', views.LocationList.as_view(), name='location_list'),
+    path('locations/<int:pk>', views.LocationDetail.as_view(), name='location_detail'),
+    path('venues/', views.VenueList.as_view(), name='venue_list'),
+    path('venues/<int:pk>', views.VenueDetail.as_view(), name='venue_detail'),
+    path('events/', views.EventList.as_view(), name='event_list'),
+    path('events/<int:pk>', views.EventDetail.as_view(), name='event_detail'),
+]
