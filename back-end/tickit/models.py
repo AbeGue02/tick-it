@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class State(models.Model):
+class Location(models.Model):
   state = models.CharField(max_length=100, default='no state name')
   city = models.CharField(max_length=100, default='no city name')
   city_img = models.TextField(max_length=300, default='')
