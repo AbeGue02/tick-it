@@ -11,7 +11,7 @@ class Location(models.Model):
     return self.state
   
 class Venue(models.Model):
-  state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='venue')
+  state = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='venue')
   name = models.CharField(max_length=100, default='no venue name')
   state = models.CharField(max_length=100, default='no state name')
   city = models.CharField(max_length=100, default='no city name')
