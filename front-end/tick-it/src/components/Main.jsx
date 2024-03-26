@@ -13,7 +13,8 @@ export default function Main() {
                 <Route path='/venues' element={<VenueList/>}/>
                 <Route path='/venues/:venueId' element={<VenueDetails/>}/>
                 <Route path='/venues/:venueId/events' element={<EventList/>}/>
-                <Route path='/venues/:venueId/events/:eventId' element={<EventDetails/>}/>
+                <Route path='/events' element={<EventList/>}/>
+                <Route path='/events/:eventId' element={<EventDetails/>}/>
             </Routes>
         </>
     )
