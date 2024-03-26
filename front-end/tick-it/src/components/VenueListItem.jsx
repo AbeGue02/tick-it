@@ -7,7 +7,7 @@ export default function VenueListItem () {
 
     useEffect(() => {
         try {
-            const response = axios.get(`localhost:8000/venues`)
+            const response = axios.get(`localhost:8000/locations`)
             console.log(response)
             setVenues(response)
             console.log(venues)
@@ -18,6 +18,15 @@ export default function VenueListItem () {
     }, [])
 
     return (
-        <div><h3>helloe</h3></div>
+        <div>
+        <ul>
+            {props.venues.map(venue => (
+                <div className='venueListItemContainer'>
+                <h3>{venue.name}</h3>
+                <h4>{venue.location}</h4>
+                </div>
+            ))}
+        </ul>
+        </div>
     )
 }
