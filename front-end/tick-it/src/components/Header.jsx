@@ -9,7 +9,7 @@ export default function Header() {
         <header className="headerContainer">
             <h1>Tick-IT</h1>
             <nav>
-                <button onClick={navigate('/venues')}>Venues</button>
+                <button onClick={() => navigate('/venues')}>Venues</button>
                 <button>Events</button>
             </nav>
         </header>
