@@ -16,13 +16,6 @@ class VenueList(generics.ListCreateAPIView):
     queryset = Venue.objects.all()
     serializer_class = VenueSerializer
 
-    def get_queryset(self):
-        qs = super().get_queryset()
-        venues= self.request.query_params.get('venues')
-        if venues:
-            return qs.filter(name__icontains=venues)
-        return qs
-
 class VenueDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Venue.objects.all()
     serializer_class = VenueSerializer
