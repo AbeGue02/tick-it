@@ -14,13 +14,9 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
     events = serializers.HyperlinkedRelatedField(
-        view_name='location_detail',
+        view_name='event-detail',
         many=True,
         read_only=True
-    )
-
-    location_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='location_detail'
     )
 
     class Meta:

@@ -8,7 +8,7 @@ class Location(models.Model):
   city_img = models.TextField(max_length=300, default='')
 
   def __str__(self):
-    return self.state
+    return f"{self.city}, {self.state}"
   
 class Venue(models.Model):
   location = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='venue')
