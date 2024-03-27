@@ -14,9 +14,11 @@ export default function EventList() {
     const getEvents = async () => {
         // Gotta add search bar functionality for adding name queries here
         let response = venueId ? 
-            await axios.get(`http://localhost:8000/venues/${venueId}/events`) : //This url will be changed once filtering is set up 
+            await axios.get(`http://localhost:8000/venues/${venueId}`) : //This url will be changed once filtering is set up 
             await axios.get('http://localhost:8000/events')
-        setEvents(searchBarText ? response.data.filter((event) => event.name.includes(searchBarText)) : response.data)
+            venueId 
+            ? setEvents(searchBarText ? response.data.event.filter((event) => event.name.includes(searchBarText)) : response.data.event)
+            : setEvents(searchBarText ? response.data.filter((event) => event.name.includes(searchBarText)) : response.data)
         console.log(response.data)
     }
 

@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import SearchBar from '../components/SearchBar'
-import EventListItem from '../components/EventListItem'
 
 export default function EventDetails() {
 
