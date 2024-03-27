@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import SearchBar from '../components/SearchBar'
 import VenueListItem from '../components/VenueListItem'
 
 export default function VenueList() {
@@ -18,25 +19,29 @@ export default function VenueList() {
         fetchVenues()
     }, [])
 
-    // const getEvents = async () => {
-    //     let response;
-    //     if (venueId) {
-    //         response = await axios.get(`http://localhost:8000/venues/${venueId}`)
-    //     } else {
-    //         response = await axios.get('http://localhost:8000/events')
-    //     }
-    //     venueId 
-    //     ? setEvents(searchBarText ? response.data.event.filter((event) => event.name.includes(searchBarText)) : response.data.event)
-    //     : setEvents(searchBarText ? response.data.filter((event) => event.name.includes(searchBarText)) : response.data)
-    //     console.log(response.data)
-    // }
+    const getEvents = async () => {
+        let response;
+        if (venueId) {
+            response = await axios.get(`http://localhost:8000/venues/${venueId}`)
+        } else {
+            response = await axios.get('http://localhost:8000/events')
+        }
+        venueId 
+        ? setEvents(searchBarText ? response.data.event.filter((event) => event.name.includes(searchBarText)) : response.data.event)
+        : setEvents(searchBarText ? response.data.filter((event) => event.name.includes(searchBarText)) : response.data)
+        console.log(response.data)
+    }
 
-    // useEffect(() => {
-    //     getEvents();
-    // }, [venueId]); // Fetch events whenever venueId changes
+    useEffect(() => {
+        getEvents();
+    }, [venueId]); // Fetch events whenever venueId changes
 
     return (
         <div>
+            <SearchBar 
+                searchBarText={searchBarText}
+                setSearchBarText={setSearchBarText}
+                onSubmit={getEvents}/>
             {venues.map((venue) => (
                 <VenueListItem key={venue.id} venue={venue} />
             ))}
