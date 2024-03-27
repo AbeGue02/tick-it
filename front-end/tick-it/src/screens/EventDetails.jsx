@@ -1,9 +1,36 @@
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import SearchBar from '../components/SearchBar'
+import EventListItem from '../components/EventListItem'
+
 export default function EventDetails() {
-    //Displays all the details of a single event. Has a button to buy tickets and a input field to say how many tickets. Also displays price
+
+    const { eventId, venueId } = useParams()
+    const [events, setEvents] = useState([])
+    const [venues, setVenues] = useState([])
+
+    const getEventDetail = async () => {
+        let response = eventId ? 
+            await axios.get(`http://localhost:8000/events/${eventId}`) : 
+            await axios.get('http://localhost:8000/events')
+        setEvents(response.data)
+        console.log(response.data)
+    }
+
+    useEffect(() => {
+        getEventDetail()
+    }, [])
+
     
     return (
         <div>
-            This is the EventDetails
+            <img className='event-image' src={events.event_img} alt="" />
+            <h1>{events.name} @ {new Date(events.date).toLocaleString()}</h1>
+            <h3>{events.venue_name}</h3>
+            <h3>{events.event_city}, {events.event_state}</h3>
+            <h3>{events.seating_type}</h3>
+            <h3>${events.cost}</h3>
         </div>
     )
 }

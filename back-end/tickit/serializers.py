@@ -6,6 +6,9 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
         queryset = Venue.objects.all(),
         source = 'venue_id'
     )
+    venue_name = serializers.ReadOnlyField(source='venue.name')
+    event_city = serializers.ReadOnlyField(source='venue.location.city')
+    event_state = serializers.ReadOnlyField(source='venue.location.state')
 
     event_url = serializers.ModelSerializer.serializer_url_field(
       view_name = 'event_detail',
@@ -13,7 +16,7 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('id', 'venue', 'name', 'event_type', 'date', 'seating_type', 'cost', 'event_img', 'event_url')
+        fields = ('id', 'venue', 'venue_name', 'event_city', 'event_state', 'name', 'event_type', 'date', 'seating_type', 'cost', 'event_img', 'event_url')
 
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
     event = EventSerializer(
