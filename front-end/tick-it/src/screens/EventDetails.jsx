@@ -24,9 +24,9 @@ export default function EventDetails() {
 
     
     return (
-        <div>
+        <div className='eventsDetailsContainer'>
             <img className='event-image' src={events.event_img} alt="" />
-            <h1>{events.name} @ {new Date(events.date).toLocaleString()}</h1>
+            <h2>{events.name} @ {new Date(events.date).toLocaleString()}</h2>
             <h3>{events.venue_name}</h3>
             <h3>{events.event_city}, {events.event_state}</h3>
             <h3>{events.seating_type}</h3>
