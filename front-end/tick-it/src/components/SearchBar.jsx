@@ -6,7 +6,7 @@ export default function SearchBar({searchBarText, setSearchBarText, onSubmit}) {
                 value={searchBarText}
                 onChange={(e) => setSearchBarText(e.target.value)}
                 placeholder="Search..."/>
-            <button>Submit</button>
+            <button onClick={onSubmit}>Submit</button>
         </div>
     )
 }

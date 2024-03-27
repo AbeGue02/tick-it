@@ -16,7 +16,7 @@ export default function EventList() {
         let response = venueId ? 
             await axios.get(`http://localhost:8000/venues/${venueId}/events`) : //This url will be changed once filtering is set up 
             await axios.get('http://localhost:8000/events')
-        setEvents(response.data)
+        setEvents(searchBarText ? response.data.filter((event) => event.name.includes(searchBarText)) : response.data)
         console.log(response.data)
     }
 
