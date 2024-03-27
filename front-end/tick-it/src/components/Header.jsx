@@ -8,12 +8,12 @@ export default function Header() {
 
     return (
         <header className="headerContainer">
-            <Link to='/' className='home-button'>
-            <h1>Tick-IT</h1>
-            </Link>
+            
+            <h1 onClick={() => navigate('/')}>Tick-IT</h1>
+        
             <nav>
-            <Link to='/venues' className='venue-button'><button onClick={() => navigate('/venues')}>Venues</button></Link>
-            <Link to='/events' className='event-button'><button>Events</button></Link>
+            <button onClick={() => navigate('/venues')}>Venues</button>
+            <button onClick={() => navigate('/events')}>Events</button>
             </nav>
         </header>
     )
