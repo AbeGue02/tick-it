@@ -23,7 +23,29 @@ header {
 }
 
 header h1 {
+    font-size: 3em;
+    color: #fff;
+    text-shadow:
+        0 0 7px #ff00e1,
+        0 0 10px #ff00e1,
+        0 0 21px #ff00e1;
     margin: 5px auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+nav button {
+    color: white;
+    background-color: #e62ad0;
+    padding: 0.5em 1em;
+    border: 0;
+    border-radius: 1em;
+    margin: 0.5em 1em;
 }
 
 button {
