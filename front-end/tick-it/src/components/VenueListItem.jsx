@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 
-export default function VenueListItem () {
-    const [venues, setVenues] = useState([])
+export default function VenueListItem (props) {
+    const [location, setLocation] = useState([])
 
     useEffect(() => {
         try {
             const response = axios.get(`localhost:8000/locations`)
             console.log(response)
-            setVenues(response)
-            console.log(venues)
+            setLocation(response)
+            console.log(location)
         } catch (error) {
             console.error('Error fetching meal:', error)
         }
