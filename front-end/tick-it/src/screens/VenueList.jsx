@@ -10,39 +10,32 @@ export default function VenueList() {
     const [events, setEvents] = useState([])
     const [searchBarText, setSearchBarText] = useState('')
 
-    const fetchVenues = async () => {
+    // const fetchVenues = async () => {
+    //     let response = await axios.get('http://localhost:8000/venues')
+    //     setVenues(response.data)
+    // }
+
+    // useEffect(() => {
+    //     fetchVenues()
+    // }, [])
+
+    const getVenues = async () => {
         let response = await axios.get('http://localhost:8000/venues')
-        setVenues(response.data)
-    }
-
-    useEffect(() => {
-        fetchVenues()
-    }, [])
-
-    const getEvents = async () => {
-        let response;
-        if (venueId) {
-            response = await axios.get(`http://localhost:8000/venues/${venueId}`)
-        } else {
-            response = await axios.get('http://localhost:8000/events')
-        }
-        venueId 
-        ? setEvents(searchBarText ? response.data.event.filter((event) => event.name.includes(searchBarText)) : response.data.event)
-        : setEvents(searchBarText ? response.data.filter((event) => event.name.includes(searchBarText)) : response.data)
+        setVenues(searchBarText ? response.data.filter((venue) => venue.name.includes(searchBarText)) : response.data)
         console.log(response.data)
     }
 
     useEffect(() => {
-        getEvents();
-    }, [venueId]); // Fetch events whenever venueId changes
+        getVenues()
+    }, [])
 
     return (
-        <div>
+        <div className="eventListContainer">
             <SearchBar 
                 searchBarText={searchBarText}
                 setSearchBarText={setSearchBarText}
-                onSubmit={getEvents}/>
-            {venues.map((venue) => (
+                onSubmit={getVenues}/>
+            {venues && venues.map((venue) => (
                 <VenueListItem key={venue.id} venue={venue} />
             ))}
         </div>
