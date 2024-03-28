@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 export default function EventDetails() {
@@ -29,6 +30,7 @@ export default function EventDetails() {
             <h3>{events.event_city}, {events.event_state}</h3>
             <h3>{events.seating_type}</h3>
             <h3>${events.cost}</h3>
+            <Link to='/checkout'><button> Checkout </button></Link>
         </div>
     )
 }
