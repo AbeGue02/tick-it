@@ -18,7 +18,7 @@ Below are wireframes depicting the envisioned user interface of Tick-IT:
 ![Venues Page Wireframe](EABE4F4A-2872-4272-8B93-0CFFEEB9080A.jpeg "Venue Page Wireframe")
 ![Venues Page Wireframe](B87BB487-7DAF-4C2D-8D56-42E14AF2B671_4_5005_c.jpeg "Venue Page Wireframe")
 
-### Entity-Relationship Diagram (ERD)
+### Entighty-Relationship Diagram (ERD)
 The following diagram illustrates the relationships between various entities within the Tick-IT database:
 
 ![Entity Relationship Diagram](59693B34-446F-47FE-B7F4-8B2FBACC0855.jpeg "Entity Relationship Diagram")
