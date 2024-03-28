@@ -116,6 +116,24 @@ button {
     box-shadow: black;
 }
 
+.eventsDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+}
+
+.eventsDetailsContainer img {
+    max-width: 100%;
+}
+
+.deleteButton {
+    background-color: red;
+    border: 0;
+    border-radius: 1em;
+    padding: 1em;
+}
+
 /* FONTS */
 
 .goldman-regular {
