@@ -21,9 +21,7 @@ Below are wireframes depicting the envisioned user interface of Tick-IT:
 ### Entity-Relationship Diagram (ERD)
 The following diagram illustrates the relationships between various entities within the Tick-IT database:
 
-![Entity Relationship Diagram](59693B34-446F-47FE-B7F4-8B2FBACC0855.jpeg "Entity Relationship Diagram")
-
-
+![Entity Relationship Diagram](assets/59693B34-446F-47FE-B7F4-8B2FBACC0855.jpeg "Entity Relationship Diagram")
 
 ## Technologies Used
 - **React**: A JavaScript library for building user interfaces.
