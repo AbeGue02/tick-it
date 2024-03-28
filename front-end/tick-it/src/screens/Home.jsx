@@ -5,8 +5,11 @@ export default function Home() {
     let navigate = useNavigate()
     
     return (
-        <div>
-            <p>Home</p>
+        <div className="homeScreenContainer">
+            <p>Hey there, welcome to Tickit - where fun never stops! 
+                Get ready to explore the coolest venues and hottest events just for you! 
+                From epic concerts to awesome sports games, Tickit's got the tickets to your next big adventure. 
+                Let's make some unforgettable memories, one tickit at a time!</p>
             <button 
                 className="goldman-regular"
                 onClick={() => navigate('/venues')}>Get started!</button>
