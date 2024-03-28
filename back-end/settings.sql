@@ -1,0 +1,3 @@
+CREATE DATABASE tickit;
+CREATE USER tickituser WITH PASSWORD 'password123';
+GRANT ALL PRIVILEGES ON DATABASE tickit TO tickituser;

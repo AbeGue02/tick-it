@@ -1,0 +1,362 @@
+
+html {
+    background-image: url("./assets/80s_background.png");
+    background-position: bottom -80px right 50%;
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: #fff;
+    text-shadow:
+        0 0 7px #ff00e1,
+        0 0 10px #ff00e1,
+        0 0 21px #ff00e1;
+    margin: 0;
+    line-height: 0;
+    animation: glitch1 2.5s infinite;
+}
+
+h1:nth-child(2) {
+    color: #67f3da;
+    animation: glitch2 2.5s infinite;
+}
+
+h1:nth-child(3) {
+    color: #f16f6f;
+    animation: glitch3 2.5s infinite;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+nav button {
+    color: white;
+    background-color: #e62ad0;
+    padding: 0.5em 1em;
+    border: 0;
+    border-radius: 1em;
+    margin: 0.5em 1em;
+}
+
+button {
+    font-family: "Goldman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Component Classes */
+
+.logo {
+    margin: 2em;
+}
+
+.homeScreenContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.homeScreenContainer button {
+    background-color: rgb(255, 220, 62);
+    font-size: 1em;
+    border: 0;
+    border-radius: 1em;
+    padding: 1em 2em;
+}
+
+.searchBarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    margin: 0.5em 0;
+}
+
+.searchBarContainer input[type="text"] {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    padding: 0.5em 0;
+    padding-left: 0.5em;
+    border: 1px solid #fff;
+    border-radius: 1em;
+    margin-right: 0.2em;
+}
+
+.searchBarContainer button {
+    background-color: #fff;
+    padding: 0.5em 1em;
+    border: 0;
+    border-radius: 1em;
+}
+
+.eventListItemContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    padding: 1em;
+    border: 1px solid #000;
+    border-radius: 1em;
+    margin: 1em 0;
+    height: 200px;
+    cursor: pointer;
+}
+
+.eventListItemContainer p, h3, h4, h5, h6 {
+    margin: 0.3rem 0;
+    box-shadow: black;
+}
+
+.eventsDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+}
+
+.eventsDetailsContainer img {
+    max-width: 100%;
+}
+
+.checkoutButton {
+    background-color: rgb(255, 220, 62);
+    font-size: 1em;
+    border: 0;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.checkoutScreenContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkoutScreenContainer img {
+    width: 100%;
+}
+
+.deleteButton {
+    background-color: red;
+    color: white;
+    font-size: 1em;
+    border: 0;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.loadingWheel {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    margin: 2em;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+
+/* FONTS */
+
+.goldman-regular {
+    font-family: "Goldman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ANIMATIONS */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes glitch1 {
+    0% {
+      transform: none;
+      opacity: 1;
+    }
+    7% {
+      transform: skew(-0.5deg, -0.9deg);
+      opacity: 0.75;
+    }
+    10% {
+      transform: none;
+      opacity: 1;
+    }
+    27% {
+      transform: none;
+      opacity: 1;
+    }
+    30% {
+      transform: skew(0.8deg, -0.1deg);
+      opacity: 0.75;
+    }
+    35% {
+      transform: none;
+      opacity: 1;
+    }
+    52% {
+      transform: none;
+      opacity: 1;
+    }
+    55% {
+      transform: skew(-1deg, 0.2deg);
+      opacity: 0.75;
+    }
+    50% {
+      transform: none;
+      opacity: 1;
+    }
+    72% {
+      transform: none;
+      opacity: 1;
+    }
+    75% {
+      transform: skew(0.4deg, 1deg);
+      opacity: 0.75;
+    }
+    80% {
+      transform: none;
+      opacity: 1;
+    }
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+}
+  
+@keyframes glitch2 {
+    0% {
+        transform: none;
+        opacity: 0.25;
+    }
+    7% {
+        transform: translate(-2px, -3px);
+        opacity: 0.5;
+    }
+    10% {
+        transform: none;
+        opacity: 0.25;
+    }
+    27% {
+        transform: none;
+        opacity: 0.25;
+    }
+    30% {
+        transform: translate(-5px, -2px);
+        opacity: 0.5;
+    }
+    35% {
+        transform: none;
+        opacity: 0.25;
+    }
+    52% {
+        transform: none;
+        opacity: 0.25;
+    }
+    55% {
+        transform: translate(-5px, -1px);
+        opacity: 0.5;
+    }
+    50% {
+        transform: none;
+        opacity: 0.25;
+    }
+    72% {
+        transform: none;
+        opacity: 0.25;
+    }
+    75% {
+        transform: translate(-2px, -6px);
+        opacity: 0.5;
+    }
+    80% {
+        transform: none;
+        opacity: 0.25;
+    }
+    100% {
+        transform: none;
+        opacity: 0.25;
+    }
+}
+
+@keyframes glitch3 {
+    0% {
+        transform: none;
+        opacity: 0.25;
+    }
+    7% {
+        transform: translate(2px, 3px);
+        opacity: 0.5;
+    }
+    10% {
+        transform: none;
+        opacity: 0.25;
+    }
+    27% {
+        transform: none;
+        opacity: 0.25;
+    }
+    30% {
+        transform: translate(5px, 2px);
+        opacity: 0.5;
+    }
+    35% {
+        transform: none;
+        opacity: 0.25;
+    }
+    52% {
+        transform: none;
+        opacity: 0.25;
+    }
+    55% {
+        transform: translate(5px, 1px);
+        opacity: 0.5;
+    }
+    50% {
+        transform: none;
+        opacity: 0.25;
+    }
+    72% {
+        transform: none;
+        opacity: 0.25;
+    }
+    75% {
+        transform: translate(2px, 6px);
+        opacity: 0.5;
+    }
+    80% {
+        transform: none;
+        opacity: 0.25;
+    }
+    100% {
+        transform: none;
+        opacity: 0.25;
+    }
+}
