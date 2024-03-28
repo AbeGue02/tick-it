@@ -4,6 +4,7 @@ import EventList from '../screens/EventList'
 import Home from '../screens/Home'
 import EventDetails from '../screens/EventDetails'
 import VenueDetails from '../screens/VenueDetails'
+import Checkout from './Checkout'
 
 export default function Main() {
     return (
@@ -15,6 +16,7 @@ export default function Main() {
                 <Route path='/venues/:venueId/events' element={<EventList/>}/>
                 <Route path='/events' element={<EventList/>}/>
                 <Route path='/events/:eventId' element={<EventDetails/>}/>
+                <Route path='/checkout' element={<Checkout/>}/>
             </Routes>
         </>
     )

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
@@ -38,9 +39,13 @@ export default function EventDetails() {
             <iframe style={{border: 0, width: '100%'}} loading="lazy" allowFullScreen src={`https://www.google.com/maps/embed/v1/search?q=${`${events.venue_name}%2C%20${events.event_city}%2C%20${events.event_state}`}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`}></iframe>
             <h3>{events.seating_type}</h3>
             <h3>${events.cost}</h3>
+
+            <Link to='/checkout'><button> Checkout </button></Link>
+
             <button 
                 className='deleteButton'
                 onClick={deleteEvent}>Delete Event</button>
+
         </div>
     )
 }
