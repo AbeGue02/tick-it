@@ -2,6 +2,11 @@
 
 Welcome to Tick-IT! Tick-IT is a web application designed as a ticket purchasing site, offering users a comprehensive platform to discover and purchase tickets for various events. From concerts and sports events to theater performances and festivals, Tick-IT provides a seamless experience for event-goers to find and secure tickets to their favorite events.
 
+## Screenshots
+
+![Venues Page](assets/VenuesPage.png)
+![Venues Page](assets/EventDetailsPage.png)
+
 ## Wireframes and ERD
 ### Wireframes
 Below are wireframes depicting the envisioned user interface of Tick-IT:
